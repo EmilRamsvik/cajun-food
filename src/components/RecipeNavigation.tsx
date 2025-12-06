@@ -99,15 +99,15 @@ export function RecipeNavigation({
       onClick={handleClick}
       className="relative cursor-pointer"
     >
-      {/* Navigation indicators */}
+      {/* Navigation indicators - hidden on small mobile, visible on larger screens */}
       {previousSlug && (
-        <div className="pointer-events-none absolute left-2 top-1/2 z-20 -translate-y-1/2 opacity-30 transition-opacity hover:opacity-60 md:left-4">
+        <div className="nav-arrow pointer-events-none absolute left-1 top-1/2 z-20 hidden -translate-y-1/2 opacity-20 sm:left-2 sm:block sm:opacity-30 md:left-4">
           <svg
-            width="24"
-            height="48"
+            width="20"
+            height="40"
             viewBox="0 0 24 48"
             fill="none"
-            className="text-warm-brown"
+            className="text-warm-brown sm:h-12 sm:w-6"
           >
             <path
               d="M20 4L4 24L20 44"
@@ -121,13 +121,13 @@ export function RecipeNavigation({
       )}
 
       {nextSlug && (
-        <div className="pointer-events-none absolute right-2 top-1/2 z-20 -translate-y-1/2 opacity-30 transition-opacity hover:opacity-60 md:right-4">
+        <div className="nav-arrow pointer-events-none absolute right-1 top-1/2 z-20 hidden -translate-y-1/2 opacity-20 sm:right-2 sm:block sm:opacity-30 md:right-4">
           <svg
-            width="24"
-            height="48"
+            width="20"
+            height="40"
             viewBox="0 0 24 48"
             fill="none"
-            className="text-warm-brown"
+            className="text-warm-brown sm:h-12 sm:w-6"
           >
             <path
               d="M4 4L20 24L4 44"

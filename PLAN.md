@@ -12,7 +12,7 @@
 - [x] Steg 8: Lenker til basisoppskrifter
 - [x] Steg 9: Next-up panel/forhåndsvisning
 - [x] Steg 10: Placeholder-illustrasjoner
-- [ ] Steg 11: Animasjoner og overganger
+- [x] Steg 11: Animasjoner og overganger
 - [ ] Steg 12: Responsivt design og finjustering
 - [ ] Steg 13: Static export-konfigurasjon for Vercel
 

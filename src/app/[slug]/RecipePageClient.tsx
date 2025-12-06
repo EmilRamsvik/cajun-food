@@ -16,19 +16,19 @@ export function RecipePageClient({ recipe }: RecipePageClientProps) {
   const currentIndex = getRecipeIndex(recipe.slug);
 
   return (
-    <main className="min-h-screen bg-parchment-dark p-4 md:p-8">
+    <main className="min-h-screen bg-parchment-dark p-2 sm:p-4 md:p-8">
       <RecipeNavigation
         nextSlug={nextRecipe?.slug}
         previousSlug={previousRecipe?.slug}
       >
-        <div className="mb-4">
+        <div className="mb-2 sm:mb-4">
           <RecipeCard recipe={recipe} />
         </div>
 
         {nextRecipe && <NextUpPanel nextRecipe={nextRecipe} />}
 
         {/* Recipe counter */}
-        <div className="mt-4 text-center text-sm text-warm-brown">
+        <div className="mt-2 pb-4 text-center text-xs text-warm-brown sm:mt-4 sm:text-sm">
           {currentIndex + 1} av {recipes.length}
         </div>
       </RecipeNavigation>

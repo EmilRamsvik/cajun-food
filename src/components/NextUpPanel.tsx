@@ -18,20 +18,20 @@ export function NextUpPanel({ nextRecipe }: NextUpPanelProps) {
           e.stopPropagation();
           setIsExpanded(!isExpanded);
         }}
-        className="flex w-full items-center justify-between rounded-t-lg bg-parchment px-4 py-3 text-left transition-colors hover:bg-parchment-dark"
+        className="flex w-full items-center justify-between rounded-t-lg bg-parchment px-3 py-2 text-left transition-colors hover:bg-parchment-dark sm:px-4 sm:py-3"
         style={{ fontFamily: 'var(--font-body)' }}
       >
-        <span className="text-sm text-gray-brown">Neste oppskrift</span>
-        <span className="flex items-center gap-2 text-warm-brown">
-          <span style={{ fontFamily: 'var(--font-display)' }}>
+        <span className="text-xs text-gray-brown sm:text-sm">Neste oppskrift</span>
+        <span className="flex items-center gap-1 text-warm-brown sm:gap-2">
+          <span className="text-sm sm:text-base" style={{ fontFamily: 'var(--font-display)' }}>
             {nextRecipe.title}
           </span>
           <svg
-            width="16"
-            height="16"
+            width="14"
+            height="14"
             viewBox="0 0 16 16"
             fill="none"
-            className={`transform transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+            className={`transform transition-transform sm:h-4 sm:w-4 ${isExpanded ? 'rotate-180' : ''}`}
           >
             <path
               d="M4 6L8 10L12 6"
@@ -53,11 +53,11 @@ export function NextUpPanel({ nextRecipe }: NextUpPanelProps) {
         <Link
           href={`/${nextRecipe.slug}`}
           onClick={(e) => e.stopPropagation()}
-          className="block bg-parchment p-4 hover:bg-parchment-dark"
+          className="block bg-parchment p-3 hover:bg-parchment-dark sm:p-4"
         >
-          <div className="flex items-start gap-4">
+          <div className="flex items-start gap-3 sm:gap-4">
             {/* Mini illustration placeholder */}
-            <div className="h-20 w-20 flex-shrink-0 rounded bg-moss-green/20 p-2">
+            <div className="h-16 w-16 flex-shrink-0 rounded bg-moss-green/20 p-1.5 sm:h-20 sm:w-20 sm:p-2">
               <svg viewBox="0 0 100 100" className="h-full w-full opacity-50">
                 <rect
                   x="10"
@@ -87,10 +87,10 @@ export function NextUpPanel({ nextRecipe }: NextUpPanelProps) {
             </div>
 
             <div className="flex-1">
-              <p className="mb-1 text-sm text-gray-brown">
+              <p className="mb-0.5 text-xs text-gray-brown sm:mb-1 sm:text-sm">
                 {nextRecipe.subtitle}
               </p>
-              <p className="text-xs text-warm-brown">{nextRecipe.scene}</p>
+              <p className="text-[10px] text-warm-brown sm:text-xs">{nextRecipe.scene}</p>
             </div>
           </div>
         </Link>
