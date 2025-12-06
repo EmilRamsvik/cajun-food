@@ -2,7 +2,7 @@
 
 ## Prosjektstatus
 - [x] Steg 0: Analyse og planlegging
-- [ ] Steg 1: Prosjektoppsett med Next.js 14+
+- [x] Steg 1: Prosjektoppsett med Next.js 14+
 - [ ] Steg 2: Grunnleggende prosjektstruktur og konfigurasjon
 - [ ] Steg 3: Oppskriftsdata (recipes.json)
 - [ ] Steg 4: Tailwind-tema og fargepalett
