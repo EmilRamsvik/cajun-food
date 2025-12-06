@@ -14,7 +14,7 @@
 - [x] Steg 10: Placeholder-illustrasjoner
 - [x] Steg 11: Animasjoner og overganger
 - [x] Steg 12: Responsivt design og finjustering
-- [ ] Steg 13: Static export-konfigurasjon for Vercel
+- [x] Steg 13: Static export-konfigurasjon for Vercel
 
 ---
 
