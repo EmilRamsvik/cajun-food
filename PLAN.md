@@ -5,7 +5,7 @@
 - [x] Steg 1: Prosjektoppsett med Next.js 14+
 - [x] Steg 2: Grunnleggende prosjektstruktur og konfigurasjon
 - [x] Steg 3: Oppskriftsdata (recipes.json)
-- [ ] Steg 4: Tailwind-tema og fargepalett
+- [x] Steg 4: Tailwind-tema og fargepalett
 - [ ] Steg 5: Grunnleggende layout og typografi
 - [ ] Steg 6: RecipeCard-komponent
 - [ ] Steg 7: Navigasjonssystem (swipe, piltaster, klikk)
