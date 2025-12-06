@@ -10,7 +10,7 @@ interface RecipeCardProps {
 
 export function RecipeCard({ recipe }: RecipeCardProps) {
   return (
-    <article className="parchment-bg paper-edge relative mx-auto flex min-h-[80vh] max-w-3xl flex-col overflow-hidden rounded-lg p-6 md:p-10">
+    <article className="parchment-bg paper-edge animate-slide-in relative mx-auto flex min-h-[80vh] max-w-3xl flex-col overflow-hidden rounded-lg p-6 md:p-10">
       {/* Recipe content - top left */}
       <div className="relative z-10 flex-1">
         {/* Title */}
@@ -47,7 +47,7 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
       </div>
 
       {/* Illustration - bottom right, fading into parchment */}
-      <div className="pointer-events-none absolute bottom-0 right-0 h-2/3 w-2/3 md:h-3/4 md:w-1/2">
+      <div className="illustration-fade pointer-events-none absolute bottom-0 right-0 h-2/3 w-2/3 md:h-3/4 md:w-1/2">
         <div
           className="absolute inset-0"
           style={{

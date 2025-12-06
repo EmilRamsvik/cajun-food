@@ -6,12 +6,12 @@
 - [x] Steg 2: Grunnleggende prosjektstruktur og konfigurasjon
 - [x] Steg 3: Oppskriftsdata (recipes.json)
 - [x] Steg 4: Tailwind-tema og fargepalett
-- [ ] Steg 5: Grunnleggende layout og typografi
-- [ ] Steg 6: RecipeCard-komponent
-- [ ] Steg 7: Navigasjonssystem (swipe, piltaster, klikk)
-- [ ] Steg 8: Lenker til basisoppskrifter
-- [ ] Steg 9: Next-up panel/forhåndsvisning
-- [ ] Steg 10: Placeholder-illustrasjoner
+- [x] Steg 5: Grunnleggende layout og typografi
+- [x] Steg 6: RecipeCard-komponent
+- [x] Steg 7: Navigasjonssystem (swipe, piltaster, klikk)
+- [x] Steg 8: Lenker til basisoppskrifter
+- [x] Steg 9: Next-up panel/forhåndsvisning
+- [x] Steg 10: Placeholder-illustrasjoner
 - [ ] Steg 11: Animasjoner og overganger
 - [ ] Steg 12: Responsivt design og finjustering
 - [ ] Steg 13: Static export-konfigurasjon for Vercel
