@@ -15,6 +15,7 @@
 - [x] Steg 11: Animasjoner og overganger
 - [x] Steg 12: Responsivt design og finjustering
 - [x] Steg 13: Static export-konfigurasjon for Vercel
+- [x] Steg 14: Tilfeldig oppskriftsrekkefølge
 
 ---
 
@@ -119,6 +120,12 @@ Fonter:
 - Konfigurere `next.config.js` for static export
 - Verifisere at alle funksjoner fungerer uten server
 - Teste build og deployment
+
+### Steg 14: Tilfeldig oppskriftsrekkefølge
+- Implementere shufflet rekkefølge med sessionStorage for konsistens
+- Navigasjon basert på tilfeldig rekkefølge, ikke fast sekvens
+- Startsiden omdirigerer til tilfeldig oppskrift
+- Brukere kan klikke på basisoppskrift-lenker for å hoppe direkte
 
 ---
 
