@@ -16,6 +16,7 @@
 - [x] Steg 12: Responsivt design og finjustering
 - [x] Steg 13: Static export-konfigurasjon for Vercel
 - [x] Steg 14: Tilfeldig oppskriftsrekkefølge
+- [ ] Steg 15: Erstatte SVG-illustrasjoner med bilder
 
 ---
 
@@ -126,6 +127,35 @@ Fonter:
 - Navigasjon basert på tilfeldig rekkefølge, ikke fast sekvens
 - Startsiden omdirigerer til tilfeldig oppskrift
 - Brukere kan klikke på basisoppskrift-lenker for å hoppe direkte
+
+### Steg 15: Erstatte SVG-illustrasjoner med bilder
+6 bilder tilgjengelig i `public/images/`:
+
+**Bildekartlegging til oppskrifter:**
+| Bilde | Innhold | Oppskrift (tema) |
+|-------|---------|------------------|
+| `SCR-20251207-imnn.jpeg` | Dampbåt på Mississippi | Roux (`steamboat`) |
+| `SCR-20251207-imqk.jpeg` | Gammel kirke i sumpen | Holy Trinity (`church`) |
+| `SCR-20251207-imrn.jpeg` | Bayou med cypress og hytte | Cajunkrydder (`bayou`) |
+| `SCR-20251207-iphe.jpeg` | Fisker med båt og krabbeteiner | Dirty Rice (`fisherman`) |
+| `SCR-20251207-ipij.jpeg` | Bourbon Street om natten | Cajunpasta (`bourbon-street`) |
+| `SCR-20251207-ipjf.jpeg` | Antebellum-herskapshus | Jambalaya (`antebellum`) |
+
+**Implementeringssteg:**
+1. Gi nytt navn til bildene for bedre lesbarhet:
+   - `steamboat.jpeg`, `church.jpeg`, `bayou.jpeg`, `fisherman.jpeg`, `bourbon-street.jpeg`, `antebellum.jpeg`
+2. Legg til `image`-felt i `Recipe`-typen (`src/types/recipe.ts`)
+3. Oppdater oppskriftsdata med bildestier (`src/data/recipes.ts`)
+4. Oppdater `IllustrationPlaceholder`-komponenten til å:
+   - Bruke Next.js `Image`-komponent for optimalisering
+   - Falle tilbake til SVG-placeholder hvis bilde ikke finnes
+   - Beholde fade-effekten mot pergamentbakgrunnen
+5. Oppskrifter uten bilder (Gumbo, Red Beans and Rice, Skalldyrfest) beholder SVG-placeholders
+
+**Manglende bilder (3 oppskrifter):**
+- Gumbo (`true-detective`) - beholder SVG
+- Red Beans and Rice (`robicheaux`) - beholder SVG
+- Skalldyrfest (`bayou-fest`) - beholder SVG
 
 ---
 
