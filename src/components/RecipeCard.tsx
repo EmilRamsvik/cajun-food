@@ -2,6 +2,7 @@
 
 import { Recipe } from '@/types/recipe';
 import Link from 'next/link';
+import Image from 'next/image';
 import { IllustrationPlaceholder } from './IllustrationPlaceholder';
 
 interface RecipeCardProps {
@@ -11,6 +12,34 @@ interface RecipeCardProps {
 export function RecipeCard({ recipe }: RecipeCardProps) {
   return (
     <article className="parchment-bg paper-edge animate-slide-in relative mx-auto flex min-h-[85vh] max-w-3xl flex-col overflow-hidden rounded-lg p-5 sm:min-h-[80vh] sm:p-6 md:p-10 lg:min-h-[75vh]">
+      {/* Background image (if available) */}
+      {recipe.image && (
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src={recipe.image}
+            alt=""
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="(max-width: 768px) 100vw, 768px"
+          />
+          {/* Gradient overlay for text readability */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(
+                135deg,
+                var(--parchment) 0%,
+                rgba(245, 230, 200, 0.95) 25%,
+                rgba(245, 230, 200, 0.7) 50%,
+                rgba(245, 230, 200, 0.3) 75%,
+                transparent 100%
+              )`,
+            }}
+          />
+        </div>
+      )}
+
       {/* Recipe content - top left */}
       <div className="relative z-10 flex-1 pr-4 sm:pr-8 md:pr-16">
         {/* Title */}
@@ -46,17 +75,19 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
         </section>
       </div>
 
-      {/* Illustration - bottom right, fading into parchment */}
-      <div className="illustration-fade pointer-events-none absolute bottom-0 right-0 h-1/2 w-1/2 sm:h-2/3 sm:w-2/3 md:h-3/4 md:w-1/2">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(135deg, var(--parchment) 0%, transparent 40%)',
-          }}
-        />
-        <IllustrationPlaceholder theme={recipe.illustrationTheme} />
-      </div>
+      {/* SVG Illustration fallback - only shown when no image */}
+      {!recipe.image && (
+        <div className="illustration-fade pointer-events-none absolute bottom-0 right-0 h-1/2 w-1/2 sm:h-2/3 sm:w-2/3 md:h-3/4 md:w-1/2">
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(135deg, var(--parchment) 0%, transparent 40%)',
+            }}
+          />
+          <IllustrationPlaceholder theme={recipe.illustrationTheme} />
+        </div>
+      )}
     </article>
   );
 }

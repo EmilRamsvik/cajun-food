@@ -16,7 +16,7 @@
 - [x] Steg 12: Responsivt design og finjustering
 - [x] Steg 13: Static export-konfigurasjon for Vercel
 - [x] Steg 14: Tilfeldig oppskriftsrekkefølge
-- [ ] Steg 15: Erstatte SVG-illustrasjoner med bilder
+- [x] Steg 15: Erstatte SVG-illustrasjoner med bilder
 
 ---
 
