@@ -17,6 +17,7 @@
 - [x] Steg 13: Static export-konfigurasjon for Vercel
 - [x] Steg 14: Tilfeldig oppskriftsrekkefølge
 - [x] Steg 15: Erstatte SVG-illustrasjoner med bilder
+- [x] Steg 16: Ny landingsside med kryddermiks-introduksjon
 
 ---
 
@@ -156,6 +157,13 @@ Fonter:
 - Gumbo (`true-detective`) - beholder SVG
 - Red Beans and Rice (`robicheaux`) - beholder SVG
 - Skalldyrfest (`bayou-fest`) - beholder SVG
+
+### Steg 16: Ny landingsside med kryddermiks-introduksjon
+- Erstatte redirect-landingssiden med en introduksjonsside
+- Vise oversikt over cajunkryddermiks og hvordan bruke den
+- Stor, tydelig knapp: "Gi meg en oppskrift!"
+- Knappen navigerer til en tilfeldig oppskrift
+- Louisiana-inspirert design som matcher resten av siden
 
 ---
 

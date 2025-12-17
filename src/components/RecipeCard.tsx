@@ -110,13 +110,13 @@ function renderInstructionWithLinks(
 
   Object.entries(linkPatterns).forEach(([pattern, slug]) => {
     if (links.includes(slug) || links.includes(pattern)) {
-      result = result.flatMap((part) => {
+      result = result.flatMap((part): React.ReactNode[] => {
         if (typeof part !== 'string') return [part];
 
         const regex = new RegExp(`(${pattern})`, 'gi');
         const parts = part.split(regex);
 
-        return parts.map((p, i) => {
+        return parts.map((p, i): React.ReactNode => {
           if (p.toLowerCase() === pattern.toLowerCase()) {
             return (
               <Link key={`${slug}-${i}`} href={`/${slug}`} className="recipe-link">
