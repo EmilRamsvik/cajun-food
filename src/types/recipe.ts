@@ -9,7 +9,6 @@ export interface Recipe {
   instructions: string[];
   links: string[];
   illustrationTheme: IllustrationTheme;
-  image?: string;
 }
 
 export type IllustrationTheme =

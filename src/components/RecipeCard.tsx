@@ -4,19 +4,23 @@ import { Recipe } from '@/types/recipe';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IllustrationPlaceholder } from './IllustrationPlaceholder';
+import { useRandomImages } from '@/hooks/useRandomImages';
 
 interface RecipeCardProps {
   recipe: Recipe;
 }
 
 export function RecipeCard({ recipe }: RecipeCardProps) {
+  const { getImageForRecipe } = useRandomImages();
+  const randomImage = getImageForRecipe(recipe.slug);
+
   return (
     <article className="parchment-bg paper-edge animate-slide-in relative mx-auto flex min-h-[85vh] max-w-3xl flex-col overflow-hidden rounded-lg p-5 sm:min-h-[80vh] sm:p-6 md:p-10 lg:min-h-[75vh]">
-      {/* Background image (if available) */}
-      {recipe.image && (
+      {/* Background image (randomly assigned) */}
+      {randomImage && (
         <div className="pointer-events-none absolute inset-0">
           <Image
-            src={recipe.image}
+            src={randomImage}
             alt=""
             fill
             className="object-cover object-center"
@@ -75,8 +79,8 @@ export function RecipeCard({ recipe }: RecipeCardProps) {
         </section>
       </div>
 
-      {/* SVG Illustration fallback - only shown when no image */}
-      {!recipe.image && (
+      {/* SVG Illustration fallback - only shown when no random image assigned */}
+      {!randomImage && (
         <div className="illustration-fade pointer-events-none absolute bottom-0 right-0 h-1/2 w-1/2 sm:h-2/3 sm:w-2/3 md:h-3/4 md:w-1/2">
           <div
             className="absolute inset-0"

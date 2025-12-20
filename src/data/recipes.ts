@@ -20,7 +20,6 @@ export const recipes: Recipe[] = [
     instructions: ['Bland alt sammen og oppbevar i lufttett boks.'],
     links: [],
     illustrationTheme: 'bayou',
-    image: '/images/bayou-noir-style.jpeg',
   },
   {
     id: '2',
@@ -39,7 +38,6 @@ export const recipes: Recipe[] = [
     ],
     links: [],
     illustrationTheme: 'steamboat',
-    image: '/images/SCR-20251207-imnn.jpeg',
   },
   {
     id: '3',
@@ -51,7 +49,7 @@ export const recipes: Recipe[] = [
       '2 deler løk, finhakket',
       '1 del stangselleri, finhakket',
       '1 del grønn paprika, finhakket',
-      '«The Pope»: hvitløk etter smak',
+      '«Paven»: hvitløk etter smak',
     ],
     instructions: [
       'Fres i smør eller olje til mykt og duftende',
@@ -60,7 +58,6 @@ export const recipes: Recipe[] = [
     ],
     links: [],
     illustrationTheme: 'church',
-    image: '/images/church-noir-style.jpeg.jpeg',
   },
   {
     id: '4',
@@ -90,7 +87,6 @@ export const recipes: Recipe[] = [
     ],
     links: ['cajunkrydder'],
     illustrationTheme: 'bourbon-street',
-    image: '/images/bourbon-street-parchement.jpeg',
   },
   {
     id: '5',
@@ -102,7 +98,7 @@ export const recipes: Recipe[] = [
     ingredients: [
       '500 g kylling eller reker',
       '1 ss cajunkrydder',
-      '300 g pølse (chorizo eller røkt)',
+      '300 g pølse (chorizo eller røkt andepølse)',
       'Holy trinity',
       '4 dl langkornet ris',
       '8 dl kraft',
@@ -119,7 +115,6 @@ export const recipes: Recipe[] = [
     ],
     links: ['cajunkrydder', 'holy-trinity'],
     illustrationTheme: 'antebellum',
-    image: '/images/antebellum-house-parchement.jpeg',
   },
   {
     id: '6',
@@ -177,7 +172,6 @@ export const recipes: Recipe[] = [
     ],
     links: ['holy-trinity', 'cajunkrydder'],
     illustrationTheme: 'fisherman',
-    image: '/images/SCR-20251207-iphe.jpeg',
   },
   {
     id: '8',

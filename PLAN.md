@@ -18,6 +18,7 @@
 - [x] Steg 14: Tilfeldig oppskriftsrekkefølge
 - [x] Steg 15: Erstatte SVG-illustrasjoner med bilder
 - [x] Steg 16: Ny landingsside med kryddermiks-introduksjon
+- [x] Steg 17: Tilfeldige bilder uten kobling til oppskrifter
 
 ---
 
@@ -164,6 +165,12 @@ Fonter:
 - Stor, tydelig knapp: "Gi meg en oppskrift!"
 - Knappen navigerer til en tilfeldig oppskrift
 - Louisiana-inspirert design som matcher resten av siden
+
+### Steg 17: Tilfeldige bilder uten kobling til oppskrifter
+- Fjerne faste bilde-referanser fra oppskriftsdata
+- Opprette utility for tilfeldig bilde-tildeling med sessionStorage
+- Shufflet bilde-mapping som persisteres i sesjonen
+- Ingen forutsigbar kobling mellom oppskrift og bilde
 
 ---
 
