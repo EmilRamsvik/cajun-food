@@ -97,7 +97,7 @@ export default function Home() {
             Gi meg en oppskrift!
           </button>
           <p className="mt-4 text-sm text-warm-brown">
-            Utforsk 9 autentiske cajunoppskrifter
+            Utforsk 8 autentiske cajunoppskrifter
           </p>
         </div>
       </div>

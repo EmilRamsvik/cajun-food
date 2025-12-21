@@ -2,26 +2,6 @@ import { Recipe } from '@/types/recipe';
 
 export const recipes: Recipe[] = [
   {
-    id: '1',
-    slug: 'cajunkrydder',
-    title: 'Cajunkrydder',
-    subtitle: 'Hjemmelaget kryddermiks',
-    scene: 'Louisiana bayou',
-    ingredients: [
-      '2 ss paprika',
-      '1 ss hvitløkspulver',
-      '1 ss løkpulver',
-      '1 ss oregano',
-      '1 ss timian',
-      '1 ts cayennepepper',
-      '1 ts sort pepper',
-      '1 ts salt',
-    ],
-    instructions: ['Bland alt sammen og oppbevar i lufttett boks.'],
-    links: [],
-    illustrationTheme: 'bayou',
-  },
-  {
     id: '2',
     slug: 'roux',
     title: 'Roux',
@@ -85,7 +65,7 @@ export const recipes: Recipe[] = [
       'Bland inn pasta og kylling. Smak til med salt',
       'Topp med frisk persille om ønskelig',
     ],
-    links: ['cajunkrydder'],
+    links: [],
     illustrationTheme: 'bourbon-street',
   },
   {
@@ -113,7 +93,7 @@ export const recipes: Recipe[] = [
       'Småkok med lokk i 20–25 min til risen er mør',
       'Bland inn kjøttet og smak til med cajunkrydder og tabasco',
     ],
-    links: ['cajunkrydder', 'holy-trinity'],
+    links: ['holy-trinity'],
     illustrationTheme: 'antebellum',
   },
   {
@@ -142,7 +122,7 @@ export const recipes: Recipe[] = [
       'Småkok i 45–60 minutter. Smak til med cajunkrydder',
       'Server over kokt ris med vårløk og filépulver',
     ],
-    links: ['roux', 'holy-trinity', 'cajunkrydder'],
+    links: ['roux', 'holy-trinity'],
     illustrationTheme: 'true-detective',
   },
   {
@@ -170,7 +150,7 @@ export const recipes: Recipe[] = [
       'Rør inn smør når risen er ferdig',
       'Topp med hakket vårløk og persille',
     ],
-    links: ['holy-trinity', 'cajunkrydder'],
+    links: ['holy-trinity'],
     illustrationTheme: 'fisherman',
   },
   {
@@ -225,7 +205,7 @@ export const recipes: Recipe[] = [
       'Hell av vannet og server rett på bord dekket med avispapir',
       'Spises med fingrene, smeltet smør og fersk sitron',
     ],
-    links: ['cajunkrydder'],
+    links: [],
     illustrationTheme: 'bayou-fest',
   },
 ];
