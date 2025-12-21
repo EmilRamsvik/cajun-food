@@ -1,13 +1,13 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { getShuffledOrder } from '@/hooks/useShuffledOrder';
+import { useShuffledOrder } from '@/hooks/useShuffledOrder';
 
 export default function Home() {
   const router = useRouter();
+  const { order } = useShuffledOrder();
 
   const handleGetRecipe = () => {
-    const order = getShuffledOrder();
     const randomIndex = Math.floor(Math.random() * order.length);
     const randomRecipe = order[randomIndex];
     if (randomRecipe) {
