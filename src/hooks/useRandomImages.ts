@@ -45,48 +45,41 @@ function createImageMapping(): ImageMapping {
   return mapping;
 }
 
-export function getImageMapping(): ImageMapping {
-  if (typeof window === 'undefined') {
-    // Server-side: return empty mapping (will be replaced client-side)
-    return {};
-  }
+// Cached server snapshot - must be stable reference (empty on server)
+const serverSnapshot: ImageMapping = {};
 
-  const stored = sessionStorage.getItem(STORAGE_KEY);
-  if (stored) {
-    try {
-      return JSON.parse(stored);
-    } catch {
-      // If parsing fails, create new mapping
+// Client-side cache
+let clientSnapshot: ImageMapping | null = null;
+
+function getClientSnapshot(): ImageMapping {
+  if (clientSnapshot === null) {
+    const stored = sessionStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        clientSnapshot = JSON.parse(stored);
+        return clientSnapshot!;
+      } catch {
+        // If parsing fails, create new mapping
+      }
     }
+
+    const mapping = createImageMapping();
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(mapping));
+    clientSnapshot = mapping;
   }
-
-  const mapping = createImageMapping();
-  sessionStorage.setItem(STORAGE_KEY, JSON.stringify(mapping));
-  return mapping;
-}
-
-// Cache the mapping to avoid recomputing on each render
-let cachedMapping: ImageMapping | null = null;
-
-function getSnapshot(): ImageMapping {
-  if (cachedMapping === null) {
-    cachedMapping = getImageMapping();
-  }
-  return cachedMapping;
+  return clientSnapshot;
 }
 
 function getServerSnapshot(): ImageMapping {
-  return {};
+  return serverSnapshot;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function subscribe(_callback: () => void): () => void {
-  // No external updates to subscribe to
+function subscribe(): () => void {
   return () => {};
 }
 
 export function useRandomImages() {
-  const mapping = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const mapping = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot);
 
   const getImageForRecipe = (slug: string): string | undefined => {
     return mapping[slug];

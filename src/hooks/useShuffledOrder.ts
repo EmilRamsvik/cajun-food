@@ -14,49 +14,43 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
-export function getShuffledOrder(): string[] {
-  if (typeof window === 'undefined') {
-    return recipes.map((r) => r.slug);
-  }
+// Cached server snapshot - must be stable reference
+const serverSnapshot: string[] = recipes.map((r) => r.slug);
 
-  const stored = sessionStorage.getItem(STORAGE_KEY);
-  if (stored) {
-    try {
-      return JSON.parse(stored);
-    } catch {
-      // If parsing fails, create new order
+// Client-side cache
+let clientSnapshot: string[] | null = null;
+
+function getClientSnapshot(): string[] {
+  if (clientSnapshot === null) {
+    const stored = sessionStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        clientSnapshot = JSON.parse(stored);
+        return clientSnapshot!;
+      } catch {
+        // If parsing fails, create new order
+      }
     }
+
+    const slugs = recipes.map((r) => r.slug);
+    const shuffled = shuffleArray(slugs);
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(shuffled));
+    clientSnapshot = shuffled;
   }
-
-  const slugs = recipes.map((r) => r.slug);
-  const shuffled = shuffleArray(slugs);
-  sessionStorage.setItem(STORAGE_KEY, JSON.stringify(shuffled));
-  return shuffled;
-}
-
-// Cache the order to avoid recomputing on each render
-let cachedOrder: string[] | null = null;
-
-function getSnapshot(): string[] {
-  if (cachedOrder === null) {
-    cachedOrder = getShuffledOrder();
-  }
-  return cachedOrder;
+  return clientSnapshot;
 }
 
 function getServerSnapshot(): string[] {
-  return recipes.map((r) => r.slug);
+  return serverSnapshot;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function subscribe(_callback: () => void): () => void {
-  // No external updates to subscribe to
+function subscribe(): () => void {
   return () => {};
 }
 
 export function useShuffledOrder() {
-  const order = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const isLoaded = typeof window !== 'undefined';
+  const order = useSyncExternalStore(subscribe, getClientSnapshot, getServerSnapshot);
+  const isLoaded = typeof window !== 'undefined' && clientSnapshot !== null;
 
   const getNextSlug = (currentSlug: string): string | undefined => {
     const currentIndex = order.indexOf(currentSlug);
