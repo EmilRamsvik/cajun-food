@@ -1,3 +1,8 @@
+export interface ExternalLink {
+  text: string;
+  url: string;
+}
+
 export interface Recipe {
   id: string;
   slug: string;
@@ -8,6 +13,7 @@ export interface Recipe {
   ingredients: string[];
   instructions: string[];
   links: string[];
+  externalLinks?: ExternalLink[];
   illustrationTheme: IllustrationTheme;
 }
 

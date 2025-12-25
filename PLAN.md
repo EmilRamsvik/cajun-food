@@ -19,6 +19,34 @@
 - [x] Steg 15: Erstatte SVG-illustrasjoner med bilder
 - [x] Steg 16: Ny landingsside med kryddermiks-introduksjon
 - [x] Steg 17: Tilfeldige bilder uten kobling til oppskrifter
+- [ ] Steg 18: Forbedret oppskriftsstruktur med lenker og kategorier
+
+---
+
+## Steg 18: Forbedret oppskriftsstruktur med lenker og kategorier
+
+### Mål
+- Legge til eksterne lenker (videoer, artikler) til oppskrifter
+- Gjøre det enklere å differensiere og kategorisere oppskrifter
+- Forbedre typedefinisjonene for bedre vedlikehold
+
+### Delsteg
+
+#### 18.1: Oppdatere Recipe-typen
+- Legge til `category` felt for å skille oppskriftstyper:
+  - `base` - Basisoppskrifter (roux, holy trinity)
+  - `main` - Hovedretter (gumbo, jambalaya, cajunpasta)
+  - `side` - Sideretter (dirty rice, red beans and rice)
+  - `event` - Spesielle anledninger (skalldyrfest)
+- Legge til `externalLinks` felt for eksterne ressurser (videoer, artikler)
+- Flytte video-lenken fra instructions til externalLinks
+
+#### 18.2: Oppdatere recipes.ts med ny struktur
+- Legge til kategori for hver oppskrift
+- Flytte eksisterende video-lenke til externalLinks
+- Legge til flere relevante lenker der det er aktuelt
+
+#### 18.3: Lint og commit
 
 ---
 
@@ -191,4 +219,4 @@ Fonter:
 ---
 
 ## Neste steg
-Venter på godkjenning før implementering starter.
+Implementere Steg 18: Forbedret oppskriftsstruktur med lenker og kategorier
