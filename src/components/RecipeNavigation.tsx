@@ -99,20 +99,20 @@ export function RecipeNavigation({
       onClick={handleClick}
       className="relative cursor-pointer"
     >
-      {/* Navigation indicators - hidden on small mobile, visible on larger screens */}
+      {/* Navigation arrows - visible on all screen sizes */}
       {previousSlug && (
-        <div className="nav-arrow pointer-events-none absolute left-1 top-1/2 z-20 hidden -translate-y-1/2 opacity-20 sm:left-2 sm:block sm:opacity-30 md:left-4">
+        <div className="nav-arrow pointer-events-none absolute left-2 top-1/2 z-20 -translate-y-1/2 opacity-50 sm:left-3 sm:opacity-60 md:left-4">
           <svg
-            width="20"
-            height="40"
+            width="28"
+            height="56"
             viewBox="0 0 24 48"
             fill="none"
-            className="text-warm-brown sm:h-12 sm:w-6"
+            className="text-warm-brown drop-shadow-md sm:h-16 sm:w-8"
           >
             <path
               d="M20 4L4 24L20 44"
               stroke="currentColor"
-              strokeWidth="3"
+              strokeWidth="4"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
@@ -121,18 +121,18 @@ export function RecipeNavigation({
       )}
 
       {nextSlug && (
-        <div className="nav-arrow pointer-events-none absolute right-1 top-1/2 z-20 hidden -translate-y-1/2 opacity-20 sm:right-2 sm:block sm:opacity-30 md:right-4">
+        <div className="nav-arrow pointer-events-none absolute right-2 top-1/2 z-20 -translate-y-1/2 opacity-50 sm:right-3 sm:opacity-60 md:right-4">
           <svg
-            width="20"
-            height="40"
+            width="28"
+            height="56"
             viewBox="0 0 24 48"
             fill="none"
-            className="text-warm-brown sm:h-12 sm:w-6"
+            className="text-warm-brown drop-shadow-md sm:h-16 sm:w-8"
           >
             <path
               d="M4 4L20 24L4 44"
               stroke="currentColor"
-              strokeWidth="3"
+              strokeWidth="4"
               strokeLinecap="round"
               strokeLinejoin="round"
             />

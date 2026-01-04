@@ -20,6 +20,30 @@
 - [x] Steg 16: Ny landingsside med kryddermiks-introduksjon
 - [x] Steg 17: Tilfeldige bilder uten kobling til oppskrifter
 - [x] Steg 18: Forbedret oppskriftsstruktur med lenker og kategorier
+- [ ] Steg 19: Forbedret mobil navigasjon
+
+---
+
+## Steg 19: Forbedret mobil navigasjon
+
+### Mål
+- Gjøre det enklere for mobilbrukere å forstå hvordan de kan bytte mellom oppskrifter
+- Legge til en tydelig "Neste oppskrift"-knapp nederst på siden
+- Gjøre navigasjonspilene mer synlige på alle skjermstørrelser
+
+### Delsteg
+
+#### 19.1: Synlige navigasjonspiler på mobil
+- Fjerne `hidden sm:block` fra pilene
+- Øke opacity fra 20% til 50%
+- Gjøre pilene større og tydeligere
+
+#### 19.2: Legg til navigasjonsknapp nederst
+- Legge til en "Neste oppskrift →"-knapp nederst på RecipeCard
+- Knappen skal være tydelig og inviterende
+- Vise tittelen på neste oppskrift i knappen
+
+#### 19.3: Lint og commit
 
 ---
 
@@ -219,4 +243,4 @@ Fonter:
 ---
 
 ## Neste steg
-Implementere Steg 18: Forbedret oppskriftsstruktur med lenker og kategorier
+Implementere Steg 19: Forbedret mobil navigasjon
