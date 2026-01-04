@@ -20,7 +20,7 @@
 - [x] Steg 16: Ny landingsside med kryddermiks-introduksjon
 - [x] Steg 17: Tilfeldige bilder uten kobling til oppskrifter
 - [x] Steg 18: Forbedret oppskriftsstruktur med lenker og kategorier
-- [ ] Steg 19: Forbedret mobil navigasjon
+- [x] Steg 19: Forbedret mobil navigasjon
 
 ---
 
