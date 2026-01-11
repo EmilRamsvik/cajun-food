@@ -54,18 +54,22 @@ export function useShuffledOrder() {
 
   const getNextSlug = (currentSlug: string): string | undefined => {
     const currentIndex = order.indexOf(currentSlug);
-    if (currentIndex === -1 || currentIndex === order.length - 1) {
+    if (currentIndex === -1) {
       return undefined;
     }
-    return order[currentIndex + 1];
+    // Loop to first recipe when at the end
+    const nextIndex = (currentIndex + 1) % order.length;
+    return order[nextIndex];
   };
 
   const getPreviousSlug = (currentSlug: string): string | undefined => {
     const currentIndex = order.indexOf(currentSlug);
-    if (currentIndex <= 0) {
+    if (currentIndex === -1) {
       return undefined;
     }
-    return order[currentIndex - 1];
+    // Loop to last recipe when at the beginning
+    const prevIndex = (currentIndex - 1 + order.length) % order.length;
+    return order[prevIndex];
   };
 
   const getIndex = (slug: string): number => {
