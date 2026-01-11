@@ -28,18 +28,22 @@ export function getRecipeBySlug(slug: string): Recipe | undefined {
 
 export function getNextRecipe(currentSlug: string): Recipe | undefined {
   const currentIndex = recipeOrder.indexOf(currentSlug);
-  if (currentIndex === -1 || currentIndex === recipeOrder.length - 1) {
+  if (currentIndex === -1) {
     return undefined;
   }
-  return getRecipeBySlug(recipeOrder[currentIndex + 1]);
+  // Loop to first recipe when at the end
+  const nextIndex = (currentIndex + 1) % recipeOrder.length;
+  return getRecipeBySlug(recipeOrder[nextIndex]);
 }
 
 export function getPreviousRecipe(currentSlug: string): Recipe | undefined {
   const currentIndex = recipeOrder.indexOf(currentSlug);
-  if (currentIndex <= 0) {
+  if (currentIndex === -1) {
     return undefined;
   }
-  return getRecipeBySlug(recipeOrder[currentIndex - 1]);
+  // Loop to last recipe when at the beginning
+  const prevIndex = (currentIndex - 1 + recipeOrder.length) % recipeOrder.length;
+  return getRecipeBySlug(recipeOrder[prevIndex]);
 }
 
 export function getRecipeIndex(slug: string): number {
