@@ -21,6 +21,33 @@
 - [x] Steg 17: Tilfeldige bilder uten kobling til oppskrifter
 - [x] Steg 18: Forbedret oppskriftsstruktur med lenker og kategorier
 - [x] Steg 19: Forbedret mobil navigasjon
+- [x] Steg 20: Kode-opprydding og strukturforbedringer
+
+---
+
+## Steg 20: Kode-opprydding og strukturforbedringer
+
+### Mål
+- Forbedre kodestruktur og vedlikeholdbarhet
+- Fjerne ubrukt kode og avhengigheter
+- Rette opp inkonsistenser i filnavn
+
+### Delsteg
+
+#### 20.1: Ekstraher SVG-scener til separate komponenter
+- Splitt IllustrationPlaceholder.tsx (544 linjer) til 9 separate scene-komponenter
+- Opprett `src/components/illustrations/` mappe
+- Hver scene blir ~50-80 linjer, mye enklere å vedlikeholde
+
+#### 20.2: Fjern ubrukt cn() utility
+- Slett `src/lib/utils.ts` som eksporterer en cn() wrapper som aldri brukes
+- Fjern clsx avhengighet hvis den ikke lenger trengs
+
+#### 20.3: Fiks bilde-filnavn inkonsistens
+- Gi nytt navn til `church-noir-style.jpeg.jpeg` → `church-noir-style.jpeg`
+- Oppdater referansen i useRandomImages.ts
+
+#### 20.4: Lint og commit
 
 ---
 

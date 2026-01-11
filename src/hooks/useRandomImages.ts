@@ -8,7 +8,7 @@ const STORAGE_KEY = 'cajun-random-images';
 // All available images in public/images/
 const AVAILABLE_IMAGES = [
   '/images/SCR-20251207-imnn.jpeg',
-  '/images/church-noir-style.jpeg.jpeg',
+  '/images/church-noir-style.jpeg',
   '/images/bayou-noir-style.jpeg',
   '/images/SCR-20251207-iphe.jpeg',
   '/images/bourbon-street-parchement.jpeg',
