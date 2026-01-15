@@ -269,5 +269,359 @@ Fonter:
 
 ---
 
+## FASE 2: FUN & ENGAGEMENT FORBEDRINGER 🎉
+
+### Steg 21: Spice Meter & Visuell Kryddernivå-indikator
+**Mål**: Gi brukerne en visuell indikasjon på hvor sterk/krydret hver oppskrift er
+
+#### Delsteg
+- Legge til `spiceLevel` (1-5 chili peppers) i Recipe-typen
+- Vurdere spicy-nivå for hver oppskrift (Gumbo = 4, Cajunpasta = 3, osv.)
+- Opprette animert chili pepper-ikon-komponent
+- Vise spice meter på toppen av hvert recipe card med animerte chilier
+- Legg til hover-effekt som får chiliene til å "flamme"
+- Tooltip som forklarer nivået på norsk
+
+#### Teknisk
+- SVG animated chili peppers
+- CSS keyframe animations for "flaming" effect
+- Tailwind for responsiv styling
+
+---
+
+### Steg 22: Oppskriftsfremdrift-tracker med Session Storage
+**Mål**: La brukere se hvilke oppskrifter de har utforsket i denne sesjonen
+
+#### Delsteg
+- Opprette `useRecipeProgress` hook som tracker besøkte oppskrifter
+- Lagre progress i sessionStorage
+- Vise diskret progress bar på bunnen av skjermen (f.eks. "5/8 oppskrifter utforsket")
+- Legg til checkmark-ikon på besøkte oppskrifter i navigation
+- Feiring-animasjon når alle oppskrifter er besøkt ("Gratulerer! Du har utforsket alle oppskriftene!")
+- Small confetti animation ved fullføring
+
+#### Teknisk
+- sessionStorage for persistence
+- Custom hook for state management
+- Canvas eller CSS-basert confetti-effekt
+
+---
+
+### Steg 23: Cajun-ordtak og "Did You Know?" fakta-kort
+**Mål**: Legge til morsomme Cajun-uttrykk og matfakta mellom oppskrifter
+
+#### Delsteg
+- Opprette datasett med cajun-ordtak på norsk og engelsk:
+  - "Laissez les bons temps rouler!" (La de gode tider rulle!)
+  - "Lagniappe" (litt ekstra som gave)
+  - "Making groceries" (handle mat)
+  - "Where y'at?" (hvordan går det?)
+- Legge til "Did You Know?" fakta om cajun-mat og Louisiana-kultur
+- 10-15% sjanse for å vise trivia-kort mellom oppskrifter
+- Animert slide-in effekt
+- Swipe/klikk for å fortsette til neste oppskrift
+- Illustrasjoner: alligator, crawfish, eller Louisiana-flagg
+
+#### Teknisk
+- Ny TriviaCar-komponent
+- Random chance-generator for visning
+- Louisiana-themed illustrasjoner (SVG)
+
+---
+
+### Steg 24: Animerte ingredienser & visuell "wow"-faktor
+**Mål**: Legge til subtile, morsomme animasjoner som gir liv til siden
+
+#### Delsteg
+- Flytende krydderstøv-partikler i bakgrunnen (paprika, pepper)
+- Hover-effekt på ingredienser som gjør dem "bounce"
+- Steam/damp-animasjon som stiger fra bunnen av cards
+- Page-turn animasjon når man bytter oppskrift (bok-effekt)
+- Papir-rusle-lydeffekt (optional, med mute-knapp)
+- Parallax-effekt på background images
+
+#### Teknisk
+- CSS animations og transforms
+- Framer Motion for avanserte animasjoner
+- Canvas for partikkel-effekter
+- Web Audio API for lydeffekter (optional)
+
+---
+
+### Steg 25: Favoritter & bokmerke-system
+**Mål**: La brukere markere favoritt-oppskrifter
+
+#### Delsteg
+- Legg til "Favoritt"-hjerte-knapp øverst på hvert kort
+- Lagre favoritter i localStorage (persistent)
+- Animasjon når hjerte klikkes (beat/pulse effekt)
+- Vise "Dine favoritter" lenke på landingssiden
+- Egen side som viser kun favoritt-oppskrifter
+- Mulighet til å fjerne favoritter
+- Badge-count på landingsside-knappen ("3 favoritter")
+
+#### Teknisk
+- localStorage for persistence
+- Favoritter context/state management
+- Hjerte SVG med fill animation
+
+---
+
+### Steg 26: Handlelistegenenerator
+**Mål**: La brukere generere en handlelist basert på valgte oppskrifter
+
+#### Delsteg
+- "Legg til i handleliste"-knapp på hvert recipe card
+- Modal/side-panel som viser valgte oppskrifter
+- Intelligent ingrediens-kombinering (f.eks. 2 løk + 1 løk = 3 løk totalt)
+- Kategori-gruppering (grønnsaker, kjøtt, krydder, etc.)
+- Eksporter handleliste:
+  - Copy til clipboard
+  - Print-vennlig visning
+  - SMS/email (optional)
+- Checkbox for å huke av ingredienser under shopping
+
+#### Teknisk
+- ShoppingList context for state
+- Modal-komponent
+- Ingrediens-parsing og aggregering-logikk
+- Print CSS styling
+
+---
+
+### Steg 27: Recipe card "shuffle"-animasjon på landingsside
+**Mål**: Gjøre landingssiden mer dynamisk og inngitende
+
+#### Delsteg
+- Vise 3-4 recipe cards som "floater" i bakgrunnen på landingssiden
+- Cards roterer sakte i 3D (parallax/perspective)
+- Subtle shadow og depth-effekt
+- Cards "shuffler" når man hovrer over "Gi meg en oppskrift!"-knappen
+- Smooth fade-in animation ved page load
+- Cards har miniature bilder og titler (preview)
+
+#### Teknisk
+- CSS 3D transforms
+- Framer Motion for orchestrated animations
+- Stagger effect for card entries
+
+---
+
+### Steg 28: Mørk modus for kvelds-matlaging
+**Mål**: Øyevennlig mørk versjon for bruk om kvelden
+
+#### Delsteg
+- Toggle-knapp øverst til høyre (sol/måne-ikon)
+- Definere dark mode fargepalett:
+  - Mørk pergament: `#2c2416`
+  - Varm cream: `#e8d4a8`
+  - Dempet sepia: `#a68456`
+- Lagre brukerpreferanse i localStorage
+- Smooth transition mellom modes (0.3s)
+- Opprettholde Louisiana-estetikken i dark mode
+- Justere bilde-opacity for bedre kontrast
+
+#### Teknisk
+- CSS variables for theming
+- localStorage for persistence
+- Tailwind dark: variants
+- Prefers-color-scheme media query support
+
+---
+
+### Steg 29: Sosial deling & "Recipe of the Day"
+**Mål**: Gjøre det enkelt å dele oppskrifter og oppmuntre til daglig besøk
+
+#### Delsteg
+- "Del oppskrift"-knapp med native share API
+- Generere vakre share images (Open Graph)
+- QR-kode modal for enkel mobil-deling
+- "Recipe of the Day" badge på én tilfeldig oppskrift
+- Roterende "Recipe of the Day" (ny hver dag basert på dato)
+- Special highlight/border på dagens oppskrift
+- Meta tags for rik preview i sosiale medier
+
+#### Teknisk
+- Navigator.share API
+- QR code generator library
+- Date-based seeding for "recipe of the day"
+- Meta tags i head
+
+---
+
+### Steg 30: Interaktiv koketimer med steg-for-steg modus
+**Mål**: Hjelpe brukere mens de faktisk lager maten
+
+#### Delsteg
+- "Start cooking"-knapp som aktiverer cooking mode
+- Full-screen step-by-step visning av instruksjoner
+- Timer-funksjonalitet for steg som krever det
+- Store, lett lesbare fonter (hands-free reading)
+- "Forrige/Neste steg"-navigasjon
+- Voice commands (optional, advanced)
+- Progress bar for hvor langt man er i oppskriften
+- Keep screen awake (wakeLock API)
+
+#### Teknisk
+- Full-screen modal/mode
+- Timer hooks og state management
+- wakeLock API
+- Large touch targets for smuss-vennlig interaksjon
+
+---
+
+### Steg 31: Animated mascot - "Boudreaux the Crawfish"
+**Mål**: Gi nettsiden en personlighet med en morsom maskot
+
+#### Delsteg
+- Lage en animert cartoon crawfish karakter
+- Mascot "peeker" inn fra siden av skjermen random ganger
+- Bobler med tips eller morsome kommentarer på norsk
+- Crawfish reagerer på brukerinteraksjon (klikk, hover)
+- Forskjellige animasjoner:
+  - Vinke hei
+  - Holde opp en chili pepper
+  - Danse når alle oppskrifter er besøkt
+  - Spise (om øm motion)
+- Easter egg: Klikk på crawfish 5 ganger for special animation
+
+#### Teknisk
+- SVG animasjoner eller Lottie
+- Random appearance intervals
+- Click counter for easter egg
+- CSS transforms og keyframes
+
+---
+
+### Steg 32: Ingrediens-substitusjon-tooltip
+**Mål**: Hjelpe brukere som mangler spesifikke ingredienser
+
+#### Delsteg
+- Legg til question-mark ikon ved siden av utvalgte ingredienser
+- Hover/klikk viser substitusjon-forslag:
+  - "Cayennepepper → Chiliflak eller Sriracha"
+  - "Fløte → Crème fraiche eller kokosmjølk (vegansk)"
+  - "Scampi → Kylling eller grønnsaker"
+- Inkluder vegetarianske/veganske alternativer
+- Norsk språk, enkel formatering
+- Subtle fade-in animasjon
+
+#### Teknisk
+- Tooltip-komponent (Radix UI eller custom)
+- Substitution data-structure
+- Conditional rendering basert på ingredient
+
+---
+
+### Steg 33: Background ambiance - Louisiana sounds (optional)
+**Mål**: Skape atmosfære med subtile lyder fra Louisiana
+
+#### Delsteg
+- Toggle-knapp for å aktivere lyder
+- Subtil ambient background audio:
+  - Zydeco/Cajun musikk (royalty-free)
+  - Bayou-lyder (vann, fugler, cikader)
+  - Restaurant-atmosfære (subtle)
+- Veldig lav volume (15-20%)
+- Fade in/out ved toggle
+- Pause automatisk hvis brukeren bytter tab
+- Respektere browser autoplay policies
+
+#### Teknisk
+- Web Audio API
+- Volume controls
+- Royalty-free audio sources
+- Page Visibility API for auto-pause
+
+---
+
+### Steg 34: Print-vennlig oppskriftskort
+**Mål**: La brukere skrive ut vakre oppskriftskort
+
+#### Delsteg
+- "Print"-knapp på hvert recipe card
+- Print CSS som formaterer for A4/Letter
+- Fjern navigasjon og UI-elementer ved print
+- Beholde Louisiana-aesthetikk
+- Include QR-code til oppskrift-URL på print
+- Optimalisert typografi for lesbarhet
+- Checkbox ved siden av ingredienser for print-out
+
+#### Teknisk
+- @media print CSS
+- window.print() API
+- QR code generator
+- Print-optimized layout
+
+---
+
+### Steg 35: Recipe search & filter-system
+**Mål**: Hjelpe brukere å finne ønsket oppskrift raskt
+
+#### Delsteg
+- Søkebar på landingssiden
+- Filter etter:
+  - Kategori (base, main, side)
+  - Spice level (1-5 chilier)
+  - Ingredienser (search: "kylling")
+  - Koketid (quick/medium/long)
+- Real-time søkeresultater
+- Animert filter-panel (slide-down)
+- "Clear filters"-knapp
+- Responsive design for mobile
+
+#### Teknisk
+- Search state management
+- Filter logic på client side
+- Debounced search input
+- Animated transitions
+
+---
+
+### Steg 36: Easter eggs & hidden gems
+**Mål**: Belønne nysgjerrige brukere med morsomme overraskelser
+
+#### Delsteg
+- Konami-kode aktiverer special mode (opp, opp, ned, ned, venstre, høyre, venstre, høyre)
+- Klikke på spesifikke elementer i bestemt rekkefølge åpner hidden recipe
+- Secret "Cajun Slang Dictionary" side
+- Hidden animation når man skriver "gumbo" i søket
+- Recipe card flips 180° om man holder shift og klikker
+- Crawfish mascot dance party mode
+
+#### Teknisk
+- Keyboard event listeners for konami code
+- Click sequence tracking
+- Hidden content/modes
+- Fun animations
+
+---
+
+## Prioriterte steg for maksimal moro
+
+### 🔥 HIGH PRIORITY (Max impact, moderate effort)
+1. **Steg 21**: Spice Meter (visuelt attraktivt, nyttig)
+2. **Steg 22**: Progress tracker (gamification, engagement)
+3. **Steg 24**: Animerte ingredienser (wow-factor)
+4. **Steg 25**: Favoritter (practical + engagement)
+5. **Steg 27**: Landing page shuffle animation (first impression)
+
+### ⭐ MEDIUM PRIORITY (Great features, more effort)
+6. **Steg 23**: Cajun trivia facts (content + fun)
+7. **Steg 26**: Handleliste-generator (super practical)
+8. **Steg 28**: Dark mode (accessibility + aesthetics)
+9. **Steg 32**: Ingrediens-substitusjon (helpful)
+
+### 🎨 NICE TO HAVE (Polish & delight)
+10. **Steg 31**: Crawfish mascot (personality)
+11. **Steg 29**: Social sharing (growth)
+12. **Steg 30**: Cooking timer mode (advanced functionality)
+13. **Steg 34**: Print-friendly (practical)
+14. **Steg 35**: Search/filter (scalability)
+15. **Steg 36**: Easter eggs (delight)
+16. **Steg 33**: Ambient sounds (optional, atmosphere)
+
+---
+
 ## Neste steg
-Implementere Steg 19: Forbedret mobil navigasjon
+Implementere Steg 21: Spice Meter & Visuell Kryddernivå-indikator
