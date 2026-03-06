@@ -270,4 +270,34 @@ Fonter:
 ---
 
 ## Neste steg
-Implementere Steg 19: Forbedret mobil navigasjon
+Implementere Steg 21: Steg-for-steg matlaging
+
+---
+
+## Steg 21: Steg-for-steg matlaging (Step-by-step cooking mode)
+
+### Mål
+- Legge til en kokkemodus der brukere kan gå gjennom oppskriftssteg ett om gangen
+- Hvert steg vises som et fullskjerm-kort
+- Trykk/sveip/piltaster går til neste steg
+- Etter siste steg vises en fullføringsside
+
+### Delsteg
+
+#### 21.1: Opprett `src/app/[slug]/steg/page.tsx`
+- Server-komponent med `generateStaticParams()` for alle oppskrifter
+- Genererer metadata: `"Steg-for-steg: {oppskrifttittel}"`
+- Renderer `<StepNavigationClient recipe={recipe} />`
+
+#### 21.2: Opprett `src/app/[slug]/steg/StepNavigationClient.tsx`
+- Client-komponent med step-tilstand (`currentStep`, 0-indeksert)
+- Navigasjon: klikk, sveip, piltaster
+- UI: steg-teller ("Steg X av Y"), instruksjonstekst, fremdriftspunkter
+- Fullføringsside etter siste steg med "Tilbake til oppskriften"
+- Gjenbruker `useRandomImages()` og lenke-parsing
+
+#### 21.3: Legg til "Start matlaging"-knapp i `RecipePageClient.tsx`
+- Lenke til `/{slug}/steg` under oppskriftskortet
+- Tydelig styling
+
+#### 21.4: Lint og commit

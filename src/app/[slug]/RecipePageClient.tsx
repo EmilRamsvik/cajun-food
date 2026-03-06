@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Recipe } from '@/types/recipe';
 import { RecipeCard } from '@/components/RecipeCard';
 import { RecipeNavigation } from '@/components/RecipeNavigation';
@@ -36,6 +37,39 @@ export function RecipePageClient({ recipe }: RecipePageClientProps) {
       >
         <div className="mb-2 sm:mb-4">
           <RecipeCard recipe={recipe} />
+        </div>
+
+        {/* Start cooking mode button */}
+        <div className="mt-4 flex justify-center px-4">
+          <Link
+            href={`/${recipe.slug}/steg`}
+            onClick={(e) => e.stopPropagation()}
+            className="group flex w-full max-w-md items-center justify-between rounded-lg border-2 border-ink/80 bg-ink px-4 py-3 text-parchment shadow-md transition-all hover:bg-ink/90 hover:shadow-lg active:scale-[0.98] sm:px-6 sm:py-4"
+          >
+            <div className="text-left">
+              <div className="text-xs font-medium uppercase tracking-wide text-parchment/70 sm:text-sm">
+                Kokkemodus
+              </div>
+              <div className="font-serif text-base sm:text-lg">Start matlaging</div>
+            </div>
+            <div className="ml-4 transition-transform group-hover:translate-x-1">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="sm:h-7 sm:w-7"
+              >
+                <path
+                  d="M9 6L15 12L9 18"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </Link>
         </div>
 
         {nextRecipe && <NextUpPanel nextRecipe={nextRecipe} />}
